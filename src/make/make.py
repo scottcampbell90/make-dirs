@@ -7,25 +7,25 @@ from distutils.dir_util import mkpath
 import shutil
 
 def mkdirp(directory):
-    """ Creates an empty directory. """
+    """Creates an empty directory. Python implementation of mkdir. """
     if not os.path.isdir(directory):
         mkpath(directory)
 
 def touch(fname):
-    """ Creates an empty file """
+    """Creates an empty file. Python implementation of touch. """
     if os.path.exists(fname):
         os.utime(fname, None)
     else:
         open(fname, 'w').close()
 
 class Make(object):
-
+    """Class to be instantiated with object that contains projectname and modulename. """
     def __init__(self, args):
         self.projectname = str(args.projectname)
         self.modulename = str(args.modulename)
 
     def mkdirs(self):
-        """ Creates Directory Structure for Make. """
+        """Creates Directory Structure for Make. """
         mkdirp(self.projectname)
         mkdirp(self.projectname + '/src')
         mkdirp(self.projectname + '/src' + '/' + self.modulename)
@@ -49,10 +49,8 @@ class Make(object):
             config.write('AM_PATH_PYTHON([2.7])\n')
             config.write('AC_CONFIG_FILES([Makefile src/Makefile src/' + self.modulename + '/Makefile])\n')
             config.write('AC_OUTPUT')
-        
         with open(self.projectname + '/Makefile.am', 'w') as mkfile:
             mkfile.write('SUBDIRS = src')
-        
         with open(self.projectname + '/src/Makefile.am', 'w') as mkfile:
             mkfile.write('SUBDIRS = ' + self.modulename + '\n\n')
             mkfile.write('bin_SCRIPTS = ' + self.projectname + '\n')
@@ -64,7 +62,6 @@ class Make(object):
             mkfile.write(self.projectname + ': ' + self.projectname + '.in Makefile\n')
             mkfile.write('        $(do_substitution) < $(srcdir)/' + self.projectname + '.in > ' + self.projectname + '\n')
             mkfile.write('        chmod +x ' + self.projectname)
-
         with open(self.projectname + '/src/' + self.modulename + '/Makefile.am', 'w') as mkfile:
             mkfile.write(self.modulename + '_PYTHON = \ \n')
             mkfile.write('        ' + self.modulename + '.py \ \n')
