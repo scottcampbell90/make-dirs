@@ -7,21 +7,14 @@ make.
 
 `make-dirs` is licensed under GPLv3
 
-Installation
-=============
+Usage
+========
 
-`make-dirs` To install make-dirs, cd into the make-dirs directory and run: 
+`make-dirs` is pretty self explanitory. To install make-dirs, cd into the make-dirs directory and run: 
 
 	$ ./configure
 	$ sudo make
 	$ sudo make install
-
-Usage
-=======
-
-Once installed, use make-dirs by running the following in a terminal, and replacing projectname and module name with those pertinant to your project.
-
-       $ make-dirs projectname modulename
 
 License
 ==================================
