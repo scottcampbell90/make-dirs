@@ -1,0 +1,6 @@
+# make-dirs
+## This is a tool to help expedite the process of python development
+## by automating the creation of the file and folder structure need by
+## make.
+
+### To install cd in the make-dirs directory and run "$ ./configure", "$ 

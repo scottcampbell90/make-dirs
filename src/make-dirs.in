@@ -1,0 +1,49 @@
+#!/usr/bin/python
+import os, errno
+import sys
+from distutils.dir_util import mkpath
+import shutil
+from make.make import Make as makerr
+from argparse import ArgumentParser
+
+def create_parser():
+    parser = ArgumentParser(
+        description='make-dirs',
+        prog='make-dirs'
+    )
+    parser.add_argument(
+        'projectname',
+        metavar='projectname',
+        help="projectname",
+        type=str
+    )
+    parser.add_argument(
+        'modulename',
+        metavar='modulename',
+        help="modulename",
+        type=str
+    )
+    parser.add_argument(
+        '-v',
+        '--version',
+        action='version',
+        version='%(prog)s 0.1'
+    )
+    return parser
+
+def main():
+    parser = create_parser()
+    args = parser.parse_args()
+    maker = makerr(args)
+    maker.mkdirs()
+    maker.writetofiles()
+    os.system('cd ' + args.projectname + '&& sudo aclocal')
+    os.system('cd ' + args.projectname + '&& sudo autoconf')
+    os.system('cd ' + args.projectname + '&& sudo automake --add-missing')
+    os.system('cd ' + args.projectname + '&& sudo ./configure')
+    os.system('cd ' + args.projectname + '&& sudo make')
+    os.system('cd ' + args.projectname + '&& sudo make install')
+    os.system('cd ' + args.projectname + '&& sudo make dist')
+
+if __name__ == "__main__":
+    main()
