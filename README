@@ -1,7 +1,7 @@
 # make-dirs 
 
 
-## Make directory and file auto-creation tool
+#### Make directory and file auto-creation tool
 
 `make-dirs` is a tool to help expedite the process of python development 
 by automating the creation of the file and folder structure need by
