@@ -1,4 +1,6 @@
 #!/usr/bin/python
+#Copyright (c) 2013 James Beedy
+
 import os, errno
 import sys, subprocess
 from distutils.dir_util import mkpath

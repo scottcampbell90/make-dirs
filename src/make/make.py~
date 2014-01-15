@@ -5,16 +5,16 @@ from distutils.dir_util import mkpath
 import shutil
 
 def mkdirp(directory):
-        """ Creates an empty directory. """
-        if not os.path.isdir(directory):
-            mkpath(directory)
+    """ Creates an empty directory. """
+    if not os.path.isdir(directory):
+        mkpath(directory)
 
-    def touch(fname):
-        """ Creates an empty file """
-        if os.path.exists(fname):
-            os.utime(fname, None)
-        else:
-            open(fname, 'w').close()
+def touch(fname):
+    """ Creates an empty file """
+    if os.path.exists(fname):
+        os.utime(fname, None)
+    else:
+        open(fname, 'w').close()
 
 class Make(object):
 

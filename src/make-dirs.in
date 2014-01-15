@@ -1,9 +1,10 @@
 #!/usr/bin/python
+#Copyright (c) 2013 James Beedy
+
 import os, errno
-import sys
 from distutils.dir_util import mkpath
 import shutil
-from make.make import Make as makerr
+from make.make import Make as mk
 from argparse import ArgumentParser
 
 def create_parser():
@@ -34,7 +35,7 @@ def create_parser():
 def main():
     parser = create_parser()
     args = parser.parse_args()
-    maker = makerr(args)
+    maker = mk(args)
     maker.mkdirs()
     maker.writetofiles()
     os.system('cd ' + args.projectname + '&& sudo aclocal')
