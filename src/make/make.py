@@ -59,16 +59,14 @@ class Make(object):
             mkfile.write('CLEANFILES = $(bin_SCRIPTS)\n')
             mkfile.write('EXTRA_DIST = ' + self.projectname + '.in\n\n')
             mkfile.write('do_substitution = sed -e "s,[@]pythondir[@],$(pythondir),g"\ \n')
-            mkfile.write('	-e "s,[@]PACKAGE[@],$(PACKAGE),g" \ \n')
-            mkfile.write('	-e "s,[@]VERSION[@],$(VERSION),g" \n\n')
+            mkfile.write('        -e "s,[@]PACKAGE[@],$(PACKAGE),g" \ \n')
+            mkfile.write('        -e "s,[@]VERSION[@],$(VERSION),g" \n\n')
             mkfile.write(self.projectname + ': ' + self.projectname + '.in Makefile\n')
-            mkfile.write('	$(do_substitution) < $(srcdir)/' + self.projectname + '.in > ' + self.projectname + '\n')
-            mkfile.write('	chmod +x ' + self.projectname)
+            mkfile.write('        $(do_substitution) < $(srcdir)/' + self.projectname + '.in > ' + self.projectname + '\n')
+            mkfile.write('        chmod +x ' + self.projectname)
 
         with open(self.projectname + '/src/' + self.modulename + '/Makefile.am', 'w') as mkfile:
             mkfile.write(self.modulename + '_PYTHON = \ \n')
-            mkfile.write('	' + self.modulename + '.py \ \n')
-            mkfile.write('	__init__.py \n\n')
+            mkfile.write('        ' + self.modulename + '.py \ \n')
+            mkfile.write('        __init__.py \n\n')
             mkfile.write(self.modulename + 'dir = $(pythondir)/' + self.modulename + '\n')
-
-
