@@ -1,0 +1,49 @@
+#!/usr/bin/python
+#Copyright (c) 2013 James Beedy
+
+import os, errno
+import shutil
+from argparse import ArgumentParser
+import numpy as np
+import pylab as pl
+
+def create_parser():
+    parser = ArgumentParser(
+        description='plotting lines and planes in python',
+        prog='plotting'
+    )
+    parser.add_argument(
+        'X',
+        metavar='X',
+        help="X coordinate",
+        type=str,
+        nargs='?'
+    )
+    parser.add_argument(
+        'Y',
+        metavar='Y',
+        help="Y coordinate",
+        type=str,
+        nargs='?'
+    )
+    parser.add_argument(
+        'Z',
+        metavar='Z',
+        help="Z coordinate",
+        type=str,
+        nargs='?'
+    )
+    parser.add_argument(
+        '-v',
+        '--version',
+        action='version',
+        version='%(prog)s 0.1'
+    )
+    return parser
+
+def main():
+    parser = create_parser()
+    args = parser.parse_args()
+
+if __name__ == "__main__":
+    main()

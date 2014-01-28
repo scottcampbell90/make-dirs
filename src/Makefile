@@ -16,10 +16,17 @@
 
 
 
+<<<<<<< HEAD
+pkgdatadir = $(datadir)/plotting
+pkgincludedir = $(includedir)/plotting
+pkglibdir = $(libdir)/plotting
+pkglibexecdir = $(libexecdir)/plotting
+=======
 pkgdatadir = $(datadir)/make-dirs
 pkgincludedir = $(includedir)/make-dirs
 pkglibdir = $(libdir)/make-dirs
 pkglibexecdir = $(libexecdir)/make-dirs
+>>>>>>> b012543cf0f93baf4f3d170cc7f7f4fcde842adc
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -113,6 +120,16 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
+<<<<<<< HEAD
+ACLOCAL = ${SHELL} /home/bdx/git/plotting/missing --run aclocal-1.11
+AMTAR = $${TAR-tar}
+AUTOCONF = ${SHELL} /home/bdx/git/plotting/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/bdx/git/plotting/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/bdx/git/plotting/missing --run automake-1.11
+AWK = mawk
+CYGPATH_W = echo
+DEFS = -DPACKAGE_NAME=\"plotting\" -DPACKAGE_TARNAME=\"plotting\" -DPACKAGE_VERSION=\"0.1\" -DPACKAGE_STRING=\"plotting\ 0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"plotting\" -DVERSION=\"0.1\"
+=======
 ACLOCAL = ${SHELL} /home/bdx/git/make-dirs/missing --run aclocal-1.11
 AMTAR = $${TAR-tar}
 AUTOCONF = ${SHELL} /home/bdx/git/make-dirs/missing --run autoconf
@@ -121,6 +138,7 @@ AUTOMAKE = ${SHELL} /home/bdx/git/make-dirs/missing --run automake-1.11
 AWK = mawk
 CYGPATH_W = echo
 DEFS = -DPACKAGE_NAME=\"make-dirs\" -DPACKAGE_TARNAME=\"make-dirs\" -DPACKAGE_VERSION=\"0.1\" -DPACKAGE_STRING=\"make-dirs\ 0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"make-dirs\" -DVERSION=\"0.1\"
+>>>>>>> b012543cf0f93baf4f3d170cc7f7f4fcde842adc
 ECHO_C = 
 ECHO_N = -n
 ECHO_T = 
@@ -132,6 +150,15 @@ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LIBOBJS = 
 LIBS = 
 LTLIBOBJS = 
+<<<<<<< HEAD
+MAKEINFO = ${SHELL} /home/bdx/git/plotting/missing --run makeinfo
+MKDIR_P = /bin/mkdir -p
+PACKAGE = plotting
+PACKAGE_BUGREPORT = 
+PACKAGE_NAME = plotting
+PACKAGE_STRING = plotting 0.1
+PACKAGE_TARNAME = plotting
+=======
 MAKEINFO = ${SHELL} /home/bdx/git/make-dirs/missing --run makeinfo
 MKDIR_P = /bin/mkdir -p
 PACKAGE = make-dirs
@@ -139,6 +166,7 @@ PACKAGE_BUGREPORT =
 PACKAGE_NAME = make-dirs
 PACKAGE_STRING = make-dirs 0.1
 PACKAGE_TARNAME = make-dirs
+>>>>>>> b012543cf0f93baf4f3d170cc7f7f4fcde842adc
 PACKAGE_URL = 
 PACKAGE_VERSION = 0.1
 PATH_SEPARATOR = :
@@ -151,10 +179,17 @@ SET_MAKE =
 SHELL = /bin/bash
 STRIP = 
 VERSION = 0.1
+<<<<<<< HEAD
+abs_builddir = /home/bdx/git/plotting/src
+abs_srcdir = /home/bdx/git/plotting/src
+abs_top_builddir = /home/bdx/git/plotting
+abs_top_srcdir = /home/bdx/git/plotting
+=======
 abs_builddir = /home/bdx/git/make-dirs/src
 abs_srcdir = /home/bdx/git/make-dirs/src
 abs_top_builddir = /home/bdx/git/make-dirs
 abs_top_srcdir = /home/bdx/git/make-dirs
+>>>>>>> b012543cf0f93baf4f3d170cc7f7f4fcde842adc
 am__leading_dot = .
 am__tar = $${TAR-tar} chof - "$$tardir"
 am__untar = $${TAR-tar} xf -
@@ -170,7 +205,11 @@ host_alias =
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
+<<<<<<< HEAD
+install_sh = ${SHELL} /home/bdx/git/plotting/install-sh
+=======
 install_sh = ${SHELL} /home/bdx/git/make-dirs/install-sh
+>>>>>>> b012543cf0f93baf4f3d170cc7f7f4fcde842adc
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -179,8 +218,13 @@ mandir = ${datarootdir}/man
 mkdir_p = /bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
+<<<<<<< HEAD
+pkgpyexecdir = ${pyexecdir}/plotting
+pkgpythondir = ${pythondir}/plotting
+=======
 pkgpyexecdir = ${pyexecdir}/make-dirs
 pkgpythondir = ${pythondir}/make-dirs
+>>>>>>> b012543cf0f93baf4f3d170cc7f7f4fcde842adc
 prefix = /usr/local
 program_transform_name = s,x,x,
 psdir = ${docdir}
@@ -194,6 +238,15 @@ target_alias =
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
+<<<<<<< HEAD
+SUBDIRS = plot
+bin_SCRIPTS = plotting
+CLEANFILES = $(bin_SCRIPTS)
+EXTRA_DIST = plotting.in
+do_substitution = sed -e "s,[@]pythondir[@],$(pythondir),g"\
+        -e "s,[@]PACKAGE[@],$(PACKAGE),g" \
+        -e "s,[@]VERSION[@],$(VERSION),g" 
+=======
 SUBDIRS = make
 bin_SCRIPTS = make-dirs
 CLEANFILES = $(bin_SCRIPTS)
@@ -201,6 +254,7 @@ EXTRA_DIST = make-dirs.in
 do_substitution = sed -e "s,[@]pythondir[@],$(pythondir),g"\
 	-e "s,[@]PACKAGE[@],$(PACKAGE),g" \
 	-e "s,[@]VERSION[@],$(VERSION),g" 
+>>>>>>> b012543cf0f93baf4f3d170cc7f7f4fcde842adc
 
 all: all-recursive
 
@@ -584,9 +638,15 @@ uninstall-am: uninstall-binSCRIPTS
 	uninstall-binSCRIPTS
 
 
+<<<<<<< HEAD
+plotting: plotting.in Makefile
+	$(do_substitution) < $(srcdir)/plotting.in > plotting
+	chmod +x plotting
+=======
 make-dirs: make-dirs.in Makefile
 	$(do_substitution) < $(srcdir)/make-dirs.in > make-dirs
 	chmod +x make-dirs
+>>>>>>> b012543cf0f93baf4f3d170cc7f7f4fcde842adc
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
