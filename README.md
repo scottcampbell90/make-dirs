@@ -7,6 +7,8 @@
 by automating the creation of the file and folder structure need by
 make.
 
+Based on a tutorial by Micah Carrick which you can find here: [Getting Started: A Simple Example](http://www.micahcarrick.com/tutorials/autotools-tutorial-python-gtk/getting-started.html "Getting Started: A Simple Example").
+
 ### Installation
 
 To install `make-dirs`, cd into the `make-dirs` directory and run: 
