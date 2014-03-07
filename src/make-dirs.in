@@ -45,6 +45,7 @@ def main():
     os.system('cd ' + args.projectname + '&& sudo make')
     os.system('cd ' + args.projectname + '&& sudo make install')
     os.system('cd ' + args.projectname + '&& sudo make dist')
+    maker.deps()
 
 if __name__ == "__main__":
     main()
