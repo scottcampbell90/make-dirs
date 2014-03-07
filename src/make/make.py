@@ -28,14 +28,16 @@ class Make(object):
         """Creates Directory Structure for Make. """
         mkdirp(self.projectname)
         mkdirp(self.projectname + '/src')
+        mkdirp(self.projectname + '/requirements')
         mkdirp(self.projectname + '/src' + '/' + self.modulename)
-        touch(self.projectname + '/' + 'Makefile.am')
-        touch(self.projectname + '/' + 'configure.ac')
-        touch(self.projectname + '/src' + '/' + self.projectname + '.in')
-        touch(self.projectname + '/src' + '/' + 'Makefile.am')    
-        touch(self.projectname + '/src' + '/' + self.modulename + '/' + self.modulename + '.py')
-        touch(self.projectname + '/src' + '/' + self.modulename + '/' + '__init__.py')
-        touch(self.projectname + '/src' + '/' + self.modulename + '/' + 'Makefile.am')
+        touch(self.projectname + '/requirements/requirements.txt')
+        touch(self.projectname + '/Makefile.am')
+        touch(self.projectname + '/configure.ac')
+        touch(self.projectname + '/src/' + self.projectname + '.in')
+        touch(self.projectname + '/src/' + 'Makefile.am')    
+        touch(self.projectname + '/src/' + self.modulename + '/' + self.modulename + '.py')
+        touch(self.projectname + '/src/' + self.modulename + '/__init__.py')
+        touch(self.projectname + '/src/' + self.modulename + '/Makefile.am')
         touch(self.projectname + '/AUTHORS')
         touch(self.projectname + '/ChangeLog')
         touch(self.projectname + '/NEWS')
@@ -67,3 +69,11 @@ class Make(object):
             mkfile.write('	' + self.modulename + '.py \ \n')
             mkfile.write('	__init__.py \n\n')
             mkfile.write(self.modulename + 'dir = $(pythondir)/' + self.modulename + '\n')
+
+    def deps(self):
+        os.system('cd ' + self.projectname + '/requirements')
+        os.system('pip freeze > freeezeout.txt')    
+        
+        
+
+                
